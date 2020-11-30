@@ -1,7 +1,7 @@
 "use strict";
 var createSlideShow = function() {
     //private variables and functions
-    var time, play = true, speed = 2000;
+    var timer, play = true, speed = 2000;
     var nodes = {image: null, caption: null};
     var img = { cache: [], counter:0};
 
@@ -23,10 +23,10 @@ var createSlideShow = function() {
         loadImages: function(slides) {
             var image;
             for (var i = 0; i < slides.length; i++) {
-                image = new image();
+                image = new Image();
                 image.src = "images/" + slides[i].href;
                 image.title = slides[i].title;
-                img.cache.push(push);
+                img.cache.push(image);
             }
             return this;
         },
